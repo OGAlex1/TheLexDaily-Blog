@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* HEADER */
+.header {
+  width: 100%;
+  background: #111827;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4f46e5;
+  
+    order: 0;
+}
+
+.menu-btn {
+  display: block;
+  font-size: 22px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  order: -1;
+}
+
+/* HIDE NAV ON MOBILE */
+.nav {
+  display: none;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* HIDE SEARCH ON MOBILE */
+.actions .search-area {
+  display: none;
+}
+
+/*SIDE BAR*/
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 260px;
+  height: 100%;
+  background: #111827;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.3s ease;
+  z-index: 200;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* NAV (DESKTOP STYLE) */
+.nav {
+  gap: 25px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #4f46e5;
+}
+
+/* SEARCH */
+.search-area {
+  background: #4f46e5;
+  display: flex;
+  border-radius: 8px;
+}
+
+.search-btn {
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-box {
+  background: #e5e7eb;
+}
+
+/* LOGIN */
+.login-btn {
+  background: transparent;
+  border: 2px solid #fff;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* SIGNUP */
+.signup-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* HOVER */
+.signup-btn:hover {
+  background: #4338ca;
+}
+
+.search-area:hover {
+  background: #e5e7eb;
+}
+
+
+/*OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 150;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/* Dropdown Menu Categories  */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  
+  background: none;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 150px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background: #f1f1f1;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media (min-width: 768px) {
+
+  /* SHOW NAV */
+  .nav {
+    display: flex;
+  }
+
+  /* SHOW SEARCH */
+  .actions .search-area {
+    display: flex;
+  }
+
+  /* HIDE MENU BUTTON */
+  .menu-btn {
+    display: none;
+  }
+
+
+
+}
