@@ -1,0 +1,118 @@
+
+/* =====================
+   THEME COLORS
+===================== */
+:root {
+  --primary: #4338ca;
+  --dark: #111827;
+  --white: #ffffff;
+  --green: #22c55e;
+  --red: #ef4444;
+  --card: #1f2937;
+}
+
+/* DARK MODE */
+.dark {
+  background: var(--dark);
+  color: var(--white);
+}
+
+/* CONTAINER */
+.settings-container {
+  padding: 20px;
+  background: #f3f4f6;
+  min-height: 100vh;
+}
+
+.dark .settings-container {
+  background: var(--dark);
+  color: var(--white);
+}
+
+/* SECTION */
+.section {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.dark .section {
+  background: var(--card);
+}
+
+/* INPUTS */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background: #111827;
+  color: white;
+  border: 1px solid #374151;
+}
+
+/* BUTTONS */
+.btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.save {
+  background: var(--green);
+  color: white;
+}
+
+.danger {
+  background: var(--red);
+  color: white;
+}
+
+/* TOGGLE SWITCH */
+.switch {
+  position: relative;
+  width: 45px;
+  height: 25px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.switch input:checked + .slider {
+  background: var(--primary);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
