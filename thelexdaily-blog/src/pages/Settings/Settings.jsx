@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./settings.scss";
+
 
 import { db, auth } from "../../config/firebase";
 import {
@@ -11,7 +13,9 @@ import {
 
 import { sendEmailVerification } from "firebase/auth";
 
+
 const Settings = () => {
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [fullname, setFullName] = useState("");
@@ -59,8 +63,8 @@ const Settings = () => {
       if (snap.exists()) {
         const data = snap.data();
 
-        setFullName(data.profile?.FullName || "");
-        setLastName(data.profile?.LastName || "");
+        setFullName(data.profile?.fullname || "");
+        setLastName(data.profile?.lastname || "");
         setUsername(data.profile?.username || "");
         setEmail(data.profile?.email || "");
         setBio(data.profile?.bio || "");
@@ -191,10 +195,18 @@ const Settings = () => {
     <div className="wrapper">
 
 
-    <div className="container">
-      
-      <h1>⚙️ Blog Settings</h1>
+    <div className="container"> 
 
+      <div className="navbtn"> 
+     <div className="sbtn" onClick={() => navigate(-1)}>Back</div>
+     <div className="sbtn" onClick={() => navigate("/")}>Home</div>
+
+      </div>
+      
+    
+
+      <h1>⚙️ Blog Settings</h1>
+ 
       {/* PROFILE */}
       <div className="section">
         <h2>👤 Profile</h2>
