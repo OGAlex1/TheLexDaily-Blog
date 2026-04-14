@@ -1,12 +1,12 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Blog from "./components/Blog/BlogList";
+import HeadLayout from "./components/HeadLayout/HeadLayout";
 
 function App() {
   return (
     <>
       <Header />
-      <Blog />
+       <HeadLayout />
 
       <Footer />
     </>
